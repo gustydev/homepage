@@ -69,7 +69,7 @@ header {
 }
 
 header > h1 {
-    position: relative;
+    position: absolute;
     font-size: 42px;
 }
 
@@ -92,4 +92,29 @@ header > ul {
     grid-area: links;
     display: flex;
     justify-self: end;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+}
+
+main > h1 {
+    font-size: 42px;
+}
+.project {
+    display: grid;
+    grid-template-rows: 3fr 1fr 2fr;
+    border: 3px solid pink;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 8px;
+}
+
+.project-image {
+    background-color: lightblue;
 }
