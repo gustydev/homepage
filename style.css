@@ -56,3 +56,40 @@ body {
 header, footer {
     background-color: #0891B2;
 }
+
+header {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "pic about-me"
+    "pic about-text"
+    "pic links";
+    padding: 36px 48px;
+}
+
+header > h1 {
+    position: relative;
+    font-size: 42px;
+}
+
+header > h2 {
+    grid-area: about-me;
+    font-size: 32px;
+}
+
+header > h3 {
+    grid-area: about-text;
+    font-size: 16px;
+}
+
+header > picture {
+    grid-area: pic;
+    background-color: gray;
+}
+
+header > ul {
+    grid-area: links;
+    display: flex;
+    justify-self: end;
+}
