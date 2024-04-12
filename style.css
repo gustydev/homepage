@@ -57,7 +57,12 @@ header, footer {
     background-color: #0891B2;
 }
 
+main > h1, footer > h1, h2 {
+    font-weight: bold;
+}
+
 header {
+    color: white;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
     grid-template-columns: 1fr 2fr;
@@ -85,7 +90,7 @@ header > h3 {
 
 header > picture {
     grid-area: pic;
-    background-color: gray;
+    background-color: #006BB7;
 }
 
 header > ul {
@@ -104,19 +109,39 @@ main > h1 {
     font-size: 42px;
 }
 
-.project {
-    display: grid;
-    grid-template-rows: 3fr 1fr 2fr;
-    border: 3px solid pink;
-}
-
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 16px;
+}
+
+.project {
+    display: grid;
+    grid-template-rows: 7fr 1fr 2fr;
+    grid-template-columns: 3fr 1fr;
+    box-shadow: 2px 1px #000000;
+    grid-template-areas:
+    "image image"
+    "title links"
+    "desc desc";
+}
+
+.project > h1 {
+    font-weight: bold;
+    grid-area: title;
+}
+
+.project > ul {
+    display: flex;
+    grid-area: links;
+}
+
+.project > h2 {
+    grid-area: desc;
 }
 
 .project-image {
+    grid-area: image;
     background-color: lightblue;
 }
 
@@ -149,7 +174,7 @@ footer > ul {
 }
 
 footer > picture {
-    background-color: pink;
+    background-color: rgb(0, 107, 183);
     grid-area: image;
 }
 
