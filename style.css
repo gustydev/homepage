@@ -62,39 +62,37 @@ main > h1, footer > h1, h2 {
 }
 
 header {
-    color: white;
-    display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas: 
-    "pic about-me"
-    "pic about-text"
-    "pic links";
-    padding: 36px 48px;
+    display: flex;
+    justify-content: center;
 }
 
-header > h1 {
-    position: absolute;
+.about-me {
+    padding: 24px;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    background-color: white;
+    color: black;
+}
+
+.logo > h1 {
+    font-size: 64px;
+}
+
+.about-me > h1 {
     font-size: 42px;
 }
 
-header > h2 {
-    grid-area: about-me;
-    font-size: 32px;
-}
-
-header > h3 {
-    grid-area: about-text;
+.about-me > h2 {
     font-size: 16px;
+    color: rgb(55, 55, 55);
 }
 
-header > picture {
-    grid-area: pic;
-    background-color: #006BB7;
+.logo {
+    color: black;
+    background-color: rgb(0, 76, 255);
 }
 
-header > ul {
-    grid-area: links;
+.about-me > ul {
     display: flex;
     justify-self: end;
 }
