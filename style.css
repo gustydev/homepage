@@ -50,9 +50,9 @@ table {
 }
 
 body {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    grid-template-rows: 1fr 1fr 0.5fr;
     font-family: "Roboto", sans-serif;
 }
 
@@ -63,13 +63,11 @@ header, footer {
 header {
     display: grid;
     grid-template-rows: 1fr 4fr;
-    grid-template-columns: 0.5fr 1fr 3fr 0.5fr;
-    flex-direction: column;
+    grid-template-columns: 0.2fr 0.8fr;
     justify-content: space-around;
     grid-template-areas: 
-    ". title title ."
-    ". pic msg ."
-    ". . links .";
+    "title title"
+    "pic msg";
     padding: 36px;
     color: white;
 }
@@ -78,7 +76,7 @@ header {
     font-size: 64px;
     font-weight: 1000;
     color: white;
-    text-shadow: 3px 3px black;
+    text-shadow: 5px 5px black;
     grid-area: title;
     justify-self: center;
 }
@@ -91,9 +89,8 @@ header > picture {
 }
 
 header > picture > img {
-    width: 100%;
-    height: auto;
-    border-radius: 12% 0 0 12%;
+    max-width: 100%;
+    min-height: auto;
 }
 
 header > .message {
@@ -106,6 +103,7 @@ header > .message {
     font-size: 20px;
     background-color: white;
     color: black;
+    align-self: center;
 }
 
 .about-me {
@@ -117,11 +115,10 @@ header > .message {
     font-family: "Playfair Display", sans-serif;
 }
 
-header > ul {
+.message > ul {
     display: flex;
-    justify-self: end;
-    grid-area: links;
-    transform: scale(2) translate(-50%, -100%);
+    align-self: start;
+    transform: scale(2) translate(15%, 0%);
 }
 
 li > button {
@@ -132,7 +129,7 @@ li > button {
 }
 
 li > button:hover {
-    transform: scale(1.1);
+    filter: invert(0.5);
     cursor: pointer;
 }
 
