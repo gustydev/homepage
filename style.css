@@ -88,8 +88,10 @@ header > picture {
 }
 
 header > picture > img {
-    max-width: 100%;
+    max-width: 400px;
+    width: 100%;
     min-height: auto;
+    object-fit:fill;
 }
 
 header > .message {
@@ -108,21 +110,25 @@ header > .message {
 .about-me {
     font-weight: bold;
     font-size: 36px;
+    margin-bottom: 12px;
 }
 
 .main-msg {
     font-family: "Playfair Display", sans-serif;
+    margin-bottom: 16px;
 }
 
 .message > ul {
     display: flex;
     align-self: start;
-    transform: scale(2) translate(15%, 0%);
+    transform: scale(2) translate(25%, 0%);
+    gap: 4px;
 }
 
 li > button {
     border: 0;
     margin: 0;
+    padding: 0;
     background: none;
 }
 
@@ -199,11 +205,56 @@ footer > ul {
 }
 
 footer > ul {
-    transform: scale(2) translate(0, 25%);
+    transform: scale(2) translate(0%, 25%);
+    gap: 4px;
     filter: invert(1);
 }
 
 .contact-msg {
     margin-top: 6px;
     margin-bottom: 18px;
+}
+
+@media (max-width: 1000px) {
+    header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.25fr 0.25fr 1fr;
+        grid-template-areas:
+        "title"
+        "pic"
+        "msg";
+    }
+    header > picture {
+        align-items: end;
+        justify-content: center;
+    }
+    header > picture > img {
+        width: 25%;
+    }
+    header > .message {
+        align-self: start;
+        align-items: center;
+    }
+    .message > ul {
+        align-self: center;
+        transform: scale(2) translate(0);
+    }
+    .title {
+        margin-bottom: 32px;
+    }
+    .projects {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 666px) {
+    header > .message {
+        font-size: 16px;
+    }
+    .about-me {
+        font-size: 32px;
+    }
+    header > picture > img {
+        width: 50%;
+    }
 }
