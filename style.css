@@ -88,10 +88,9 @@ header > picture {
 }
 
 header > picture > img {
-    max-width: 400px;
+    /* max-width: 370px; */
     width: 100%;
     min-height: auto;
-    object-fit:fill;
 }
 
 header > .message {
@@ -149,6 +148,7 @@ main {
 
 main > h1 {
     font-size: 42px;
+    margin-bottom: 42px;
 }
 
 .projects {
@@ -159,14 +159,14 @@ main > h1 {
 
 .project {
     display: grid;
-    grid-template-rows: 8fr 2fr 1fr;
+    grid-template-rows: 8fr 1fr 1fr;
     grid-template-columns: 3fr 1fr;
     grid-template-areas:
     "image image"
     "title links"
     "desc desc";
-    font-size: 125%;
     padding: 24px;
+    box-shadow: 1px 1px rgb(221, 221, 221);
 }
 
 .project > h1 {
@@ -183,6 +183,8 @@ main > h1 {
 .project-image {
     grid-area: image;
     background-color: lightblue;
+    background-size: cover;
+    width: 100%;
 }
 
 .project-links {
@@ -193,7 +195,7 @@ main > h1 {
     align-items: center;
     justify-content: center;
     grid-area: links;
-    transform: scale(2) translate(-25%, 0);
+    transform: scale(1.5) translate(-25%, 0);
 }
 
 .project-links > li > button {
@@ -236,10 +238,10 @@ footer > ul {
     margin-bottom: 18px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
     header {
         grid-template-columns: 1fr;
-        grid-template-rows: 0.25fr 0.25fr 1fr;
+        grid-template-rows: 0.25fr 0.25fr 0.5fr;
         grid-template-areas:
         "title"
         "pic"
@@ -263,8 +265,8 @@ footer > ul {
     .title {
         margin-bottom: 32px;
     }
-    .projects {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .project-image {
+        min-height: 500px;
     }
 }
 
@@ -274,8 +276,5 @@ footer > ul {
     }
     .about-me {
         font-size: 32px;
-    }
-    header > picture > img {
-        width: 50%;
     }
 }
