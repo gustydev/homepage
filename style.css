@@ -153,38 +153,59 @@ main > h1 {
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 32px;
 }
 
 .project {
     display: grid;
-    grid-template-rows: 7fr 1fr 2fr;
+    grid-template-rows: 8fr 2fr 1fr;
     grid-template-columns: 3fr 1fr;
-    box-shadow: 2px 1px #000000;
     grid-template-areas:
     "image image"
     "title links"
     "desc desc";
+    font-size: 125%;
+    padding: 24px;
 }
 
 .project > h1 {
     font-weight: bold;
     grid-area: title;
-}
-
-.project > ul {
-    display: flex;
-    grid-area: links;
+    align-self: center;
 }
 
 .project > h2 {
+    font-weight: normal;
     grid-area: desc;
 }
 
 .project-image {
     grid-area: image;
     background-color: lightblue;
+}
+
+.project-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    justify-self: end;
+    align-items: center;
+    justify-content: center;
+    grid-area: links;
+    transform: scale(2) translate(-25%, 0);
+}
+
+.project-links > li > button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.project-links > li:hover {
+    filter: invert(39%) sepia(89%) saturate(570%) hue-rotate(148deg) brightness(97%) contrast(94%);
 }
 
 footer > h1 {
