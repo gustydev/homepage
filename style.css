@@ -61,6 +61,11 @@ header, footer {
     background-color: #0891B2;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 header {
     display: grid;
     grid-template-rows: 1fr 4fr; 
@@ -132,7 +137,7 @@ li > button {
     background: none;
 }
 
-li > button:hover {
+li > a:hover {
     color: #0891B2;
     cursor: pointer;
 }
@@ -231,8 +236,6 @@ main > h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    color: black;
 }
 
 .project-techs {
@@ -243,13 +246,12 @@ main > h1 {
     grid-area: techs;
 }
 
-.project-links > li:hover {
+li > a:hover {
     filter: invert(39%) sepia(89%) saturate(570%) hue-rotate(148deg) brightness(97%) contrast(94%);
 }
 
 footer > h1 {
     font-size: 42px;
-    grid-area: contact-me;
 }
 
 footer {
@@ -257,17 +259,32 @@ footer {
     flex-direction: column;
     align-items: center;
     color: white;
-    padding: 36px;
+    padding: 48px;
+    min-height: 15vh;
+}
+
+.footer-text {
+    font-size: 8px;
+    color: black;
 }
 
 footer > ul {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    transform: scale(2) translate(0%, 25%);
+    filter: invert(1);
 }
 
-footer > ul {
-    transform: scale(2) translate(0%, 25%);
-    gap: 4px;
-    filter: invert(1);
+footer > ul > li {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+footer > ul > li > a > img {
+    width: 16px;
 }
 
 .contact-msg {
