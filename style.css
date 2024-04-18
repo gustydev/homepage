@@ -63,7 +63,6 @@ header {
     display: grid;
     grid-template-rows: 1fr 4fr;
     grid-template-columns: 0.2fr 0.8fr;
-    justify-content: space-around;
     grid-template-areas: 
     "title title"
     "pic msg";
@@ -88,9 +87,10 @@ header > picture {
 }
 
 header > picture > img {
-    /* max-width: 370px; */
+    max-width: 370px;
     width: 100%;
     min-height: auto;
+    border-radius: 12px;
 }
 
 header > .message {
@@ -149,6 +149,7 @@ main {
 main > h1 {
     font-size: 42px;
     margin-bottom: 42px;
+    align-self: center;
 }
 
 .projects {
@@ -159,7 +160,7 @@ main > h1 {
 
 .project {
     display: grid;
-    grid-template-rows: 8fr 1fr 1fr;
+    grid-template-rows: minmax(300px, 1fr) 0.2fr 0.2fr;
     grid-template-columns: 3fr 1fr;
     grid-template-areas:
     "image image"
@@ -173,6 +174,7 @@ main > h1 {
     font-weight: bold;
     grid-area: title;
     align-self: center;
+    font-size: 20px;
 }
 
 .project > h2 {
@@ -182,8 +184,9 @@ main > h1 {
 
 .project-image {
     grid-area: image;
-    background-color: lightblue;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
 }
 
@@ -195,7 +198,7 @@ main > h1 {
     align-items: center;
     justify-content: center;
     grid-area: links;
-    transform: scale(1.5) translate(-25%, 0);
+    transform: scale(1.75) translate(-25%, 0);
 }
 
 .project-links > li > button {
@@ -265,16 +268,16 @@ footer > ul {
     .title {
         margin-bottom: 32px;
     }
-    .project-image {
-        min-height: 500px;
-    }
 }
 
 @media (max-width: 666px) {
-    header > .message {
-        font-size: 16px;
+    .projects {
+        grid-template-columns: 1fr;
     }
-    .about-me {
-        font-size: 32px;
+    header > picture > img {
+        width: 45%;
+    }
+    .title {
+        font-size: 36px;
     }
 }
