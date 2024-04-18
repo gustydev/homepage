@@ -223,14 +223,16 @@ main > h1 {
     align-items: center;
     justify-content: center;
     grid-area: links;
-    transform: scale(1.75) translate(-25%, 0);
+    transform: scale(1.5) translate(-15%, 0);
 }
 
-.project-links > li > button {
+.project-links > li > a {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    color: black;
 }
 
 .project-techs {
