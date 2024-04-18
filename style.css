@@ -52,6 +52,8 @@ table {
 body {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
     font-family: "Roboto", sans-serif;
 }
 
@@ -61,12 +63,11 @@ header, footer {
 
 header {
     display: grid;
-    grid-template-rows: 1fr 3.5fr 0.5fr; 
-    grid-template-columns: minmax(370px, 0.05fr) 1fr;
+    grid-template-rows: 1fr 4fr; 
+    grid-template-columns: minmax(300px, 0.05fr) 1fr;
     grid-template-areas: 
     "title title"
-    "pic msg"
-    "pic techs";
+    "pic msg";
     padding: 36px;
     color: white;
 }
@@ -88,7 +89,6 @@ header > picture {
 }
 
 header > picture > img {
-    /* max-width: 370px; */
     width: 100%;
     min-height: auto;
     border-radius: 12px;
