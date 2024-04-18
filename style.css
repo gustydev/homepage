@@ -61,11 +61,12 @@ header, footer {
 
 header {
     display: grid;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 3.5fr 0.5fr; 
     grid-template-columns: 0.2fr 0.8fr;
     grid-template-areas: 
     "title title"
-    "pic msg";
+    "pic msg"
+    "pic techs";
     padding: 36px;
     color: white;
 }
@@ -143,7 +144,30 @@ main > h1, footer > h1, h2 {
 main {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 36px;
+}
+
+.tech-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 64px;
+    padding: 0 48px 72px 48px;
+}
+
+.tech-list > i {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    font-size: 48px;
+}
+
+.tech-list > i > span {
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 main > h1 {
@@ -165,7 +189,8 @@ main > h1 {
     grid-template-areas:
     "image image"
     "title links"
-    "desc desc";
+    "desc desc"
+    ". techs";
     padding: 24px;
     box-shadow: 1px 1px rgb(221, 221, 221);
 }
@@ -208,6 +233,13 @@ main > h1 {
     justify-content: center;
 }
 
+.project-techs {
+    display: flex;
+    font-size: 16px;
+    gap: 4px;
+    justify-content: end;
+    grid-area: techs;
+}
 
 .project-links > li:hover {
     filter: invert(39%) sepia(89%) saturate(570%) hue-rotate(148deg) brightness(97%) contrast(94%);
