@@ -62,7 +62,7 @@ header, footer {
 header {
     display: grid;
     grid-template-rows: 1fr 3.5fr 0.5fr; 
-    grid-template-columns: 0.2fr 0.8fr;
+    grid-template-columns: minmax(370px, 0.05fr) 1fr;
     grid-template-areas: 
     "title title"
     "pic msg"
@@ -88,7 +88,7 @@ header > picture {
 }
 
 header > picture > img {
-    max-width: 370px;
+    /* max-width: 370px; */
     width: 100%;
     min-height: auto;
     border-radius: 12px;
